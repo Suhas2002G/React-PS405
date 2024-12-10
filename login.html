@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login-success{
+            color: green;
+
+        }
+        .login-failed{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Login</h2>
+        Enter your name : <input type="text" id="u"><br><br>
+        Enter your password : <input type="password" id="p"><br><br>
+        <button onclick="login()">Submit</button><br><br>
+        <p id="sp"></p>
+    </div>
+
+
+    <script>
+        function login(){
+            var user = 'Suhas'
+            var password = 'Suhas@123'
+
+            var uname = document.getElementById('u').value
+            var upass = document.getElementById('p').value
+
+            if(uname===user && upass===password){
+                
+                let s=document.getElementById('sp')
+                s.classList.add('login-success')
+                s.innerHTML='Login Successful'
+            }
+            else{
+                let s=document.getElementById('sp')
+                s.classList.add('login-failed')
+                s.innerHTML='Login Failed'
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>
