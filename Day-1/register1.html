@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login and Register Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+    <div class="form-container">
+        <div class="">
+            <h5 id="error-msg"></h5> 
+        </div>
+    <h5 id="error-msg"></h5>
+      <h1 class="title">Register</h1>
+      
+        <div class="input-group">
+          <label for="register-name">Name</label>
+          <input type="text" id="register-name" placeholder="Enter your name" >
+        </div>
+        <div class="input-group">
+          <label for="register-email">Email</label>
+          <input type="email" id="register-email" placeholder="Enter your email" >
+        </div>
+        <div class="input-group">
+          <label for="register-password">Password</label>
+          <input type="password" id="register-password" placeholder="Enter your password" >
+        </div>
+        <div class="input-group">
+            <label for="register-password">Confirm Password</label>
+            <input type="password" id="register-cpassword" placeholder="Confirm your password" >
+          </div>
+        <button type="submit" class="btn" onclick="registerFunction()">Register</button>
+        <p class="switch-form" style="margin-top: 9px;">
+          Already have an account? <a href="#">Login</a>
+        </p>
+      
+    </div>
+  </div>
+
+
+  <script>
+    function registerFunction(){
+        let n=document.getElementById('register-name').value
+        let e=document.getElementById('register-email').value
+        let pass=document.getElementById('register-password').value
+        let cpass=document.getElementById('register-cpassword').value
+        // console.log(n,e,pass,cpass)
+
+        if(n==='' || e==='' || pass==='' || cpass===''){
+            err=document.getElementById('error-msg')
+            err.classList.add('reg-failed')
+            err.innerHTML='Fill all the Fields'
+        }
+        else if(pass!=cpass){
+            err=document.getElementById('error-msg')
+            err.classList.add('reg-failed')
+            err.innerHTML='Password and Confirm Password should be same'
+        }
+        else{
+            err=document.getElementById('error-msg')
+            err.classList.add('reg-success')
+            err.innerHTML='Registration Successfull...'
+        }
+    }
+
+
+
+  </script>
+</body>
+</html>
